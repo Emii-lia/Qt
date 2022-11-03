@@ -11,8 +11,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     ui->groupBox->setGeometry(this->width()/2,this->height()/3,this->width()/2,this->height()/3);
-    ui->label_pic->setGeometry(0,this->height()/3,this->width()/2,this->height()/3);
-    QPixmap pix(":/img/img/mh.png");
+    ui->label_pic->setGeometry(0,this->height()/3,this->width()/2,this->height()/2);
+    QPixmap pix(":/img/img/animation_500_l9vj8ca8.gif");
 
     int wt = ui->label_pic->width();
     int ht = ui->label_pic->height();
@@ -26,7 +26,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    if(openDB("/run/media/to/784CF7C94CF78064/Projet/Projet-QT-master/Database/projetest.sqlite"))
+    if(openDB("/home/sweetie/QT_Project/Database/projetest.sqlite"))
     {
         QString userName {""},password{""};
         userName = ui->inpUsername->text();
@@ -46,6 +46,12 @@ void MainWindow::on_pushButton_clicked()
             if(i==1)
             {
                 hide();
+
+//                setWindowOpacity(0);
+//               resize(0,0);
+//                setHidden(true);
+//                setVisible(false);
+//                setEnabled(false);
                 myMenu = new menu(this);
                 myMenu->show();
 
@@ -64,5 +70,6 @@ void MainWindow::on_pushButton_clicked()
         }
 
     }
+
     closeDB();
 }

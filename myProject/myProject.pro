@@ -5,6 +5,8 @@
 #-------------------------------------------------
 
 QT       += core gui sql
+QT       += core gui charts
+QT += charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -26,6 +28,7 @@ CONFIG += c++11
 
 SOURCES += \
         adduser.cpp \
+        ch_pass.cpp \
         dialog.cpp \
         finance.cpp \
         historic.cpp \
@@ -35,11 +38,13 @@ SOURCES += \
         mainwindow.cpp \
         menu.cpp \
         modifuser.cpp \
+        profil.cpp \
         reinscription.cpp \
         rmuser.cpp
 
 HEADERS += \
         adduser.h \
+        ch_pass.h \
         dialog.h \
         finance.h \
         historic.h \
@@ -48,11 +53,13 @@ HEADERS += \
         mainwindow.h \
         menu.h \
         modifuser.h \
+        profil.h \
         reinscription.h \
         rmuser.h
 
 FORMS += \
         adduser.ui \
+        ch_pass.ui \
         dialog.ui \
         finance.ui \
         historic.ui \
@@ -61,6 +68,7 @@ FORMS += \
         mainwindow.ui \
         menu.ui \
         modifuser.ui \
+        profil.ui \
         reinscription.ui \
         rmuser.ui
 
@@ -71,3 +79,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     assets.qrc
+
+DISTFILES +=

@@ -75,6 +75,9 @@
            <layout class="QFormLayout" name="formLayout">
             <item row="1" column="0">
              <widget class="QLabel" name="label">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(25, 25, 25);</string>
+              </property>
               <property name="text">
                <string>Identifiant :</string>
               </property>
@@ -92,6 +95,9 @@
             </item>
             <item row="2" column="0">
              <widget class="QLabel" name="label_2">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(18, 18, 18);</string>
+              </property>
               <property name="text">
                <string>Date de demande :</string>
               </property>
@@ -109,6 +115,9 @@
             </item>
             <item row="3" column="0">
              <widget class="QLabel" name="label_3">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(20, 20, 20);</string>
+              </property>
               <property name="text">
                <string>Piece justificative :</string>
               </property>
@@ -220,6 +229,9 @@ QPushButton:pressed{
            <layout class="QFormLayout" name="formLayout_2">
             <item row="1" column="0">
              <widget class="QLabel" name="label_4">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(20, 20, 20);</string>
+              </property>
               <property name="text">
                <string>Identifiant :</string>
               </property>

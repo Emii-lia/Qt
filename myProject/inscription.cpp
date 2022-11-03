@@ -6,7 +6,7 @@ inscription::inscription(QWidget *parent) :
     ui(new Ui::inscription)
 {
     ui->setupUi(this);
-//    setFixedSize(989,618);
+    setFixedSize(989,618);
 
     ui->vers_inp_montant->setEnabled(0);
     ui->vers_inp_borderau->setEnabled(0);
@@ -27,7 +27,7 @@ void inscription::on_logout_clicked()
 //Carte
 void inscription::on_pushButton_clicked()
 {
-    openDB("/run/media/to/784CF7C94CF78064/Projet/Projet-QT-master/Database/projetest.sqlite");
+    openDB("/home/sweetie/QT_Project/Database/projetest.sqlite");
     QString idEtudiant = ui->bar_inp_idEtudiant->text();//identifiant matricule || no concours
     QSqlQuery qry;
 
@@ -50,8 +50,8 @@ void inscription::on_pushButton_clicked()
         if(count != 1 )
         {
             QMessageBox::information(this,"Error","Etudiant non trouve");
-            return;
             closeDB();
+            return;
         }
     }
     else
@@ -83,11 +83,12 @@ void inscription::on_pushButton_clicked()
             setMontant(qry.value(10).toInt());
             setEchel(qry.value(9).toBool());
 
-            //Definitiont statu de paiement
+            //Definitiont statu de paiement //Total argent payer
             sommePayer= qry.value(18).toInt();
 
             setMontantPayer(sommePayer);
 
+            //Somme a payer = montant due
             montDue = qry.value(10).toInt();
             ui->inp_montPayer->setText(QVariant(montPayer).toString());
 
@@ -116,8 +117,8 @@ void inscription::on_pushButton_clicked()
         if(i!=1)
         {
             QMessageBox::information(this,"Error","Etudiant non trouve");
-            return;
             closeDB();
+            return;
         }
     }
     else
@@ -130,7 +131,7 @@ void inscription::on_pushButton_clicked()
 
 void inscription::on_pushButton_2_clicked()
 {
-    openDB("C:/Users/micka/Desktop/Databases_projet_fin_annee/Database/projetest.sqlite");
+    openDB("/home/sweetie/QT_Project/Database/projetest.sqlite");
     QSqlQuery qry;
 
     QString numBordereau{""};
@@ -190,11 +191,11 @@ void inscription::on_pushButton_2_clicked()
         return;
     }
 
-    QString dateVersement = ui->vers_inp_date->date().toString("yyyy-MM-dd");
+    QString dateVersement = ui->vers_inp_date->date().toString("MM-dd-yy");
     QString dateNow{""};
 
     //Date butoire
-    QString dateFinale = "2022-11-30";
+    QString dateFinale = "30-11-22";
     qry.prepare("SELECT date('now');");
     int i=0;
     if(qry.exec())

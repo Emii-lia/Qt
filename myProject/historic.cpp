@@ -6,7 +6,7 @@ historic::historic(QWidget *parent) :
     ui(new Ui::historic)
 {
     ui->setupUi(this);
-//    setFixedSize(989,618);
+    setFixedSize(989,618);
 
     //Affichage de l'historique
     //To make a query , we'll use
@@ -14,7 +14,7 @@ historic::historic(QWidget *parent) :
 
     //To present your table, we need a view
     QSqlQueryModel *model = new QSqlQueryModel();
-    openDB("/run/media/to/784CF7C94CF78064/Projet/Projet-QT-master/Database/historique.sqlite");
+    openDB("/home/sweetie/QT_Project/Database/historique.sqlite");
     q->prepare("SELECT * FROM [historique];");
     if(q->exec())
     {
@@ -37,7 +37,7 @@ void historic::on_pushButton_clicked()
 
 void historic::on_visionner_btn_clicked()
 {
-    openDB("C:/Users/micka/Desktop/Databases_projet_fin_annee/Database/projetest.sqlite");
+    openDB("/home/sweetie/QT_Project/Database/projetest.sqlite");
 
     //To make a query , we'll use
     QSqlQuery *qry = new QSqlQuery();

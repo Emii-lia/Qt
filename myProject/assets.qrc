@@ -2,5 +2,12 @@
     <qresource prefix="/img">
         <file>img/mh.png</file>
         <file>img/hero-background-15.jpg</file>
+        <file>img/cs-user.png</file>
+        <file>img/document-new.png</file>
+        <file>Database/projetest.sqlite</file>
+        <file>img/sqldeveloper.png</file>
+        <file>img/animation_500_l9vj8ca8.gif</file>
+        <file>img/computer.png</file>
     </qresource>
+    <qresource prefix="/db"/>
 </RCC>

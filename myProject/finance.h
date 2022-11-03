@@ -2,6 +2,10 @@
 #define FINANCE_H
 
 #include <QDialog>
+#include <QtCharts>
+#include <QChartView>
+#include <QPieSeries>
+#include <QPieSlice>
 
 namespace Ui {
 class finance;
@@ -17,6 +21,8 @@ public:
 
 private slots:
     void on_retour_clicked();
+
+    void on_view_clicked();
 
 private:
     Ui::finance *ui;

@@ -8,7 +8,7 @@ liste_generale::liste_generale(QWidget *parent) :
     ui(new Ui::liste_generale)
 {
     ui->setupUi(this);
-//    setFixedSize(989,618);
+    setFixedSize(989,618);
 
     ui->L1->setEnabled(0);ui->L2->setEnabled(0);ui->L3->setEnabled(0);ui->M1->setEnabled(0);ui->M2->setEnabled(0);ui->D1->setEnabled(0);
     ui->paye->setEnabled(0);ui->partiel->setEnabled(0);ui->non_paye->setEnabled(0);
@@ -28,7 +28,7 @@ void liste_generale::on_logout_clicked()
 void liste_generale::on_view_clicked()
 {
     /*--------Opening the DB and DB for the student---------*/
-    openDB("/run/media/to/784CF7C94CF78064/Projet/Projet-QT-master/Database/projetest.sqlite");
+    openDB("/home/sweetie/QT_Project/Database/projetest.sqlite");
 
     //Composant of the request
     QString categories{""},filtreNiveau{""},filtrePayement{""};
@@ -196,7 +196,7 @@ void liste_generale::on_save_clicked()
     fileName = ui->filename->text();
     if(fileName=="")
         fileName = "document";
-        openDB("C:/Users/micka/Desktop/Databases_projet_fin_annee/Database/projetest.sqlite");
+        openDB("/home/sweetie/QT_Project/Database projetest.sqlite");
     QSqlQuery qry;
     //Recuperation des filtres, ici les filtres sont des attribut le notre fenetre(Voir liste_generale.h)
     qry.prepare("SELECT e.[identifiant],e.[nom],e.[prenom],e.[niveau],SUM(v.[montant]) AS 'Montant payer' FROM [etudiantest] e LEFT JOIN [versements] v ON v.[IdEtudiant] = e.[IdEtudiant] WHERE ("+qryNiv+") GROUP BY e.[IdEtudiant]  HAVING ("+qryPay+");");
@@ -204,7 +204,7 @@ void liste_generale::on_save_clicked()
     if(qry.exec())
     {
         //Nous avons besoin d'un fichier ou inscrire la VIEW
-        QFile file("E:/Web/Back-end/SQL/sqlite/prog2/"+fileName+".txt");
+        QFile file("/home/sweetie/PROJET FIN ANNEE/Database"+fileName+".txt");
         //Pour pouvoir ecrire sur une nouvelle ligne
         if(file.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text)){
             bool flag = true;

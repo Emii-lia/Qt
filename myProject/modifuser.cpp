@@ -17,7 +17,7 @@ void modifuser::on_pushButton_clicked()
 {
     QString id = ui->inp_ID->text();
     QString nom{""},prenom{""},niveau{userNiv};
-    openDB("/run/media/to/784CF7C94CF78064/Projet/Projet-QT-master/Database/projetest.sqlite");
+    openDB("/home/sweetie/QT_Project/Database/projetest.sqlite");
     QSqlQuery qry;
     qry.prepare("SELECT [nom receptioniste],[prenom receptioniste] FROM [receptionistes] WHERE [IdReceptioniste] = "+ id +";");
     if(!qry.exec())

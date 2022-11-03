@@ -15,7 +15,7 @@ adduser::~adduser()
 
 void adduser::on_pushButton_clicked()
 {
-    openDB("/run/media/to/784CF7C94CF78064/Projet/Projet-QT-master/Database/projetest.sqlite");
+    openDB("/home/sweetie/QT_Project/Database/projetest.sqlite");
     QSqlQuery qry;
     //Nom requis
     QString nom = ui->inp_nom->text();

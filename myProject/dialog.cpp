@@ -6,7 +6,7 @@ Dialog::Dialog(QWidget *parent) :
     ui(new Ui::Dialog)
 {
     ui->setupUi(this);
-//    setFixedSize(989,618);
+    setFixedSize(989,618);
 }
 
 Dialog::~Dialog()
@@ -26,7 +26,7 @@ void Dialog::on_pushButton_2_clicked()
 
 void Dialog::on_ajouter_btn_clicked()
 {
-    openDB("/run/media/to/784CF7C94CF78064/Projet/Projet-QT-master/Database/projetest.sqlite");
+    openDB("/home/sweetie/QT_Project/Database/projetest.sqlite");
 
     QString dateFinale = "2022-11-30";
 
@@ -153,7 +153,7 @@ void Dialog::on_ajouter_btn_clicked()
 
 void Dialog::on_autorisation_btn_clicked()
 {
-    openDB("C:/Users/micka/Desktop/Databases_projet_fin_annee/Database/projetest.sqlite");
+    openDB("/home/sweetie/QT_Project/Database/projetest.sqlite");
 
     QSqlQuery qry;
 
@@ -241,7 +241,7 @@ void Dialog::on_autorisation_btn_clicked()
 
 void Dialog::on_vision_liste_btn_clicked()
 {
-    openDB("C:/Users/micka/Desktop/Databases_projet_fin_annee/Database/projetest.sqlite");
+    openDB("/home/sweetie/QT_Project/Database/projetest.sqlite");
 
     //To make a query , we'll use
     QSqlQuery *q = new QSqlQuery();
